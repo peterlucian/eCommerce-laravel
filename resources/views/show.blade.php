@@ -4,7 +4,7 @@
 @section('content')
 
     <!-- Header -->
-    <header class="bg-gray-dark sticky top-0 z-50">
+    <header class="bg-sky-500/50 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center py-4">
             <!-- Left section: Logo -->
             <a href="index.html" class="flex items-center">
@@ -85,54 +85,40 @@
 
             <!-- Right section: Buttons (for desktop) -->
             <div class="hidden lg:flex items-center space-x-4 relative">
-              <a href="register.html"
-                  class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Register</a>
-              <a href="register.html"
-                  class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Login</a>
-              <div class="relative group cart-wrapper">
-                  <a href="/cart.html" >
-                      <img src="assets/images/cart-shopping.svg" alt="Cart" class="h-6 w-6 group-hover:scale-120">
-                  </a>
-                  <!-- Cart dropdown -->
-                  <div class="absolute right-0 mt-1 w-80 bg-white shadow-lg p-4 rounded hidden group-hover:block">
-                      <div class="space-y-4">
-                          <!-- product item -->
-                          <div class="flex items-center justify-between pb-4 border-b border-gray-line">
-                              <div class="flex items-center">
-                                  <img src="/assets/images/single-product/1.jpg" alt="Product" class="h-12 w-12 object-cover rounded mr-2">
-                                  <div>
-                                      <p class="font-semibold">Summer black dress</p>
-                                      <p class="text-sm">Quantity: 1</p>
-                                  </div>
-                              </div>
-                              <p class="font-semibold">$25.00</p>
-                          </div>
-                          <!-- product item -->
-                          <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <img src="/assets/images/single-product/2.jpg" alt="Product" class="h-12 w-12 object-cover rounded mr-2">
-                                <div>
-                                    <p class="font-semibold">Black suit</p>
-                                    <p class="text-sm">Quantity: 1</p>
-                                </div>
-                            </div>
-                            <p class="font-semibold">$125.00</p>
-                        </div>
-                      </div>
-                      <a href="/cart.html" class="block text-center mt-4 border border-primary bg-primary hover:bg-transparent text-white hover:text-primary py-2 rounded-full font-semibold">Go to Cart</a>
-                  </div>
-              </div>
-              <a id="search-icon" href="javascript:void(0);" class="text-white hover:text-secondary group">
-                  <img src="assets/images/search-icon.svg" alt="Search"
-                      class="h-6 w-6 transition-transform transform group-hover:scale-120">
-              </a>
-              <!-- Search field -->
-              <div id="search-field"
-                  class="hidden absolute top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
-                  <input type="text" class="w-full p-2 border border-gray-300 rounded"
-                      placeholder="Search for products...">
-              </div>
-          </div>
+            {{-- <a href="register.html"
+                class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Register</a>
+            <a href="register.html"
+                class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Login</a> --}}
+                @auth
+                    <a href="{{ url('/dashboard') }}"
+                    class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                    Dashboard
+                    </a>
+                @else
+                    <a href="{{ route('login') }}"
+                    class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
+                    Log in
+                    </a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}"
+                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                            Register
+                            </a>
+                        @endif
+                @endauth
+
+                <a id="search-icon" href="javascript:void(0);" class="dark:text-[#EDEDEC] hover:text-secondary group">
+                    <img src="assets/images/search-icon.svg" alt="Search"
+                        class="h-6 w-6 transition-transform transform group-hover:scale-120">
+                </a>
+                <!-- Search field -->
+                <div id="search-field"
+                    class="hidden absolute top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
+                    <input type="text" class="w-full p-2 border border-gray-300 rounded"
+                        placeholder="Search for products...">
+                </div>
+        </div>
         </div>
     </header>
 
@@ -179,13 +165,31 @@
           <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">Checkout</a></li>
       </ul>
       <div class="flex flex-col mt-6 space-y-2 items-center">
-          <a href="register.html"
+          {{-- <a href="register.html"
               class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Register</a>
           <a href="register.html"
               class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Login</a>
           <a href="register.html"
-              class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Cart -&nbsp;<span>5</span>&nbsp;items</a>
-      </div>
+              class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Cart -&nbsp;<span>5</span>&nbsp;items</a> --}}
+            @auth
+                <a href="{{ url('/dashboard') }}"
+                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                Dashboard
+                </a>
+            @else
+                <a href="{{ route('login') }}"
+                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
+                Log in
+                </a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}"
+                        class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                        Register
+                        </a>
+                    @endif
+            @endauth
+        </div>
       <!-- Search field -->
       <div
           class="  top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
@@ -221,7 +225,7 @@
                             <div id="main-image-container">
                                 <img id="main-image"
                                     class="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
-                                    src="{{ asset($item_images[0]->image_resource_path)}}"
+                                    src=""
                                     alt="Main Product Image" />
                             </div>
                             <!-- Small Images -->

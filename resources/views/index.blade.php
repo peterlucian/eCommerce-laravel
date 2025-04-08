@@ -3,12 +3,12 @@
 @section('content')
 
     <!-- Header -->
-    <header class="bg-gray-dark sticky top-0 z-50">
+    <header class="bg-sky-500/50 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center py-4">
             <!-- Left section: Logo -->
             <a href="index.html" class="flex items-center">
               <div>
-                  <img src="assets/images/template-white-logo.png" alt="Logo" class="h-14 w-auto mr-4">
+                  <img src="/images/template-white-logo.png" alt="Logo" class="h-14 w-auto mr-4">
               </div>
             </a>
 
@@ -90,56 +90,24 @@
                   class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Login</a> --}}
                 @auth
                     <a href="{{ url('/dashboard') }}"
-                    class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">
+                    class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
                     Dashboard
                     </a>
                 @else
                     <a href="{{ route('login') }}"
-                    class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">
+                    class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
                     Log in
                     </a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}"
-                            class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">
+                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
                             Register
                             </a>
                         @endif
                 @endauth
-                <div class="relative group cart-wrapper">
-                    <a href="/cart.html" >
-                        <img src="assets/images/cart-shopping.svg" alt="Cart" class="h-6 w-6 group-hover:scale-120">
-                    </a>
-                    <!-- Cart dropdown -->
-                    <div class="absolute right-0 mt-1 w-80 bg-white shadow-lg p-4 rounded hidden group-hover:block">
-                        <div class="space-y-4">
-                            <!-- product item -->
-                            <div class="flex items-center justify-between pb-4 border-b border-gray-line">
-                                <div class="flex items-center">
-                                    <img src="/assets/images/single-product/1.jpg" alt="Product" class="h-12 w-12 object-cover rounded mr-2">
-                                    <div>
-                                        <p class="font-semibold">Summer black dress</p>
-                                        <p class="text-sm">Quantity: 1</p>
-                                    </div>
-                                </div>
-                                <p class="font-semibold">$25.00</p>
-                            </div>
-                            <!-- product item -->
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center">
-                                    <img src="/assets/images/single-product/2.jpg" alt="Product" class="h-12 w-12 object-cover rounded mr-2">
-                                    <div>
-                                        <p class="font-semibold">Black suit</p>
-                                        <p class="text-sm">Quantity: 1</p>
-                                    </div>
-                                </div>
-                                <p class="font-semibold">$125.00</p>
-                            </div>
-                        </div>
-                        <a href="/cart.html" class="block text-center mt-4 border border-primary bg-primary hover:bg-transparent text-white hover:text-primary py-2 rounded-full font-semibold">Go to Cart</a>
-                    </div>
-                </div>
-                <a id="search-icon" href="javascript:void(0);" class="text-white hover:text-secondary group">
+
+                <a id="search-icon" href="javascript:void(0);" class="dark:text-[#EDEDEC] hover:text-secondary group">
                     <img src="assets/images/search-icon.svg" alt="Search"
                         class="h-6 w-6 transition-transform transform group-hover:scale-120">
                 </a>
@@ -217,7 +185,7 @@
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
-                        <img src="assets/images/main-slider/5.jpg" alt="Product 1">
+                        <img src="/images/main-slider/5.jpg" alt="Product 1">
                         <div class="swiper-slide-content">
                         <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Women</h2>
                         <p class="mb-4 text-white md:text-2xl">Experience the best in sportswear with <br>our latest collection.</p>
@@ -228,7 +196,7 @@
                     </div>
                     <!-- Slide 2 -->
                     <div class="swiper-slide">
-                        <img src="assets/images/main-slider/2.png" alt="Product 2">
+                        <img src="/images/main-slider/2.png" alt="Product 2">
                         <div class="swiper-slide-content">
                         <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Men</h2>
                         <p class="mb-4 text-white md:text-2xl">Discover the latest trends in Men`s <br>sportswear and casual fashion.</p>
@@ -239,7 +207,7 @@
                     </div>
                     <!-- Slide 3 -->
                     <div class="swiper-slide">
-                        <img src="assets/images/main-slider/4.jpg" alt="Product 3">
+                        <img src="/images/main-slider/4.jpg" alt="Product 3">
                         <div class="swiper-slide-content">
                         <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Accessories</h2>
                         <p class="mb-4 text-white md:text-2xl">Elevate your style with our latest <br>sportswear collection.</p>
@@ -256,7 +224,7 @@
         </section>
 
         <!-- Product banner section -->
-        <section id="product-banners">
+        {{-- <section id="product-banners">
             <div class="container mx-auto py-10">
                 <div class="flex flex-wrap -mx-4">
                     <!-- Category 1 -->
@@ -303,11 +271,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         <!-- Popular product section -->
         <section id="popular-products">
-            <div class="container mx-auto px-4">
+            <div class="container mx-auto px-4 mt-6">
                 <h2 class="text-2xl font-bold mb-8">Popular products</h2>
                 <div class="flex flex-wrap -mx-4">
                     @forelse ($items as $item)
@@ -398,7 +366,7 @@
 
         <!-- Banner section -->
         <section id="banner" class="relative my-16">
-            <div class="container mx-auto px-4 py-20 rounded-lg relative bg-cover bg-center" style="background-image: url('assets/images/banner1.jpg');">
+            <div class="container mx-auto px-4 py-20 rounded-lg relative bg-cover bg-center" style="background-image: url('/images/banner1.jpg');">
                 <div class="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
                 <div class="relative flex flex-col items-center justify-center h-full text-center text-white py-20">
                     <h2 class="text-4xl font-bold mb-4">Welcome to Our Shop</h2>

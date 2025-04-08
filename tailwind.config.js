@@ -31,7 +31,7 @@ export default {
                 current: 'currentColor',
                 white: '#ffffff',
                 black: '#010717',
-                primary: '#ff0042',
+                primary: '#7fd2f9',
                 gray: {
                   lighter: '#FAF7F3',
                   light: '#323232',

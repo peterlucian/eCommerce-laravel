@@ -1,29 +1,30 @@
+
 /* cart */
-document.addEventListener('DOMContentLoaded', function () {
-  const cartIcon = document.querySelector('.cart-wrapper');
-  const cartDropdown = cartIcon.querySelector('.group-hover\\:block');
+// document.addEventListener('DOMContentLoaded', function () {
+//   const cartIcon = document.querySelector('.cart-wrapper');
+//   const cartDropdown = cartIcon.querySelector('.group-hover\\:block');
 
-  cartIcon.addEventListener('mouseenter', function () {
-      clearTimeout(cartIcon.__timer);
-      cartDropdown.classList.remove('hidden');
-  });
+//   cartIcon.addEventListener('mouseenter', function () {
+//       clearTimeout(cartIcon.__timer);
+//       cartDropdown.classList.remove('hidden');
+//   });
 
-  cartIcon.addEventListener('mouseleave', function () {
-      cartIcon.__timer = setTimeout(() => {
-          cartDropdown.classList.add('hidden');
-      }, 1300);
-  });
+//   cartIcon.addEventListener('mouseleave', function () {
+//       cartIcon.__timer = setTimeout(() => {
+//           cartDropdown.classList.add('hidden');
+//       }, 1300);
+//   });
 
-  cartDropdown.addEventListener('mouseenter', function () {
-      clearTimeout(cartIcon.__timer);
-  });
+//   cartDropdown.addEventListener('mouseenter', function () {
+//       clearTimeout(cartIcon.__timer);
+//   });
 
-  cartDropdown.addEventListener('mouseleave', function () {
-      cartIcon.__timer = setTimeout(() => {
-          cartDropdown.classList.add('hidden');
-      }, 1300);
-  });
-});
+//   cartDropdown.addEventListener('mouseleave', function () {
+//       cartIcon.__timer = setTimeout(() => {
+//           cartDropdown.classList.add('hidden');
+//       }, 1300);
+//   });
+// });
 
 /* mobile menu */
 document.addEventListener("DOMContentLoaded", function () {
@@ -32,40 +33,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
   hamburgerBtn.addEventListener('click', function () {
     mobileMenu.classList.toggle('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
 
 /* swiper slider */
-if (typeof Swiper !== 'undefined') {
-  var swiper = new Swiper('.swiper', {
-    slidesPerView: 2,
-    loop: true,
-    autoplay: {
-        delay: 3000,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-        1024: {
-            slidesPerView: 6,
-        },
-    },
-  });
+// if (typeof Swiper !== 'undefined') {
+//   var swiper = new Swiper('.swiper', {
+//     slidesPerView: 2,
+//     loop: true,
+//     autoplay: {
+//         delay: 3000,
+//     },
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     },
+//     breakpoints: {
+//         1024: {
+//             slidesPerView: 6,
+//         },
+//     },
+//   });
 
-  var swiper = new Swiper('.main-slider', {
-    slidesPerView: 1,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-  },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
-}
+//   var swiper = new Swiper('.main-slider', {
+//     slidesPerView: 1,
+//     loop: true,
+//     autoplay: {
+//       delay: 5000,
+//   },
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     },
+//   });
+// }
 
 /* search icon show/hide */
 document.getElementById('search-icon').addEventListener('click', function() {
@@ -98,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const decreaseButton = document.getElementById('decrease');
     const increaseButton = document.getElementById('increase');
     const quantityInput = document.getElementById('quantity');
-  
+
     if (decreaseButton && increaseButton && quantityInput) {
         decreaseButton.addEventListener('click', function () {
             let quantity = parseInt(quantityInput.value);
@@ -108,14 +110,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             updateButtons();
         });
-  
+
         increaseButton.addEventListener('click', function () {
             let quantity = parseInt(quantityInput.value);
             quantity += 1;
             quantityInput.value = quantity;
             updateButtons();
         });
-  
+
         function updateButtons() {
             if (parseInt(quantityInput.value) === 1) {
                 decreaseButton.setAttribute('disabled', true);
@@ -184,22 +186,22 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* cart page */
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.cart-increment').forEach(button => {
-      button.addEventListener('click', function () {
-          let quantityElement = this.previousElementSibling;
-          let quantity = parseInt(quantityElement.textContent, 10);
-          quantityElement.textContent = quantity + 1;
-      });
-  });
+// document.addEventListener('DOMContentLoaded', function () {
+//   document.querySelectorAll('.cart-increment').forEach(button => {
+//       button.addEventListener('click', function () {
+//           let quantityElement = this.previousElementSibling;
+//           let quantity = parseInt(quantityElement.textContent, 10);
+//           quantityElement.textContent = quantity + 1;
+//       });
+//   });
 
-  document.querySelectorAll('.cart-decrement').forEach(button => {
-      button.addEventListener('click', function () {
-          let quantityElement = this.nextElementSibling;
-          let quantity = parseInt(quantityElement.textContent, 10);
-          if (quantity > 1) {
-              quantityElement.textContent = quantity - 1;
-          }
-      });
-  });
-});
+//   document.querySelectorAll('.cart-decrement').forEach(button => {
+//       button.addEventListener('click', function () {
+//           let quantityElement = this.nextElementSibling;
+//           let quantity = parseInt(quantityElement.textContent, 10);
+//           if (quantity > 1) {
+//               quantityElement.textContent = quantity - 1;
+//           }
+//       });
+//   });
+// });
