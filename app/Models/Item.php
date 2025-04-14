@@ -12,4 +12,12 @@ class Item extends Model
 
 
     protected $fillable = ['name', 'description', 'price', 'thumbnail_path', 'user_id'];
+
+    public function imagePath(){
+        return $this->hasMany(ImagePath::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

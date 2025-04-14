@@ -11,4 +11,8 @@ class ImagePath extends Model
     use HasFactory;
     protected $fillable = ['image_resource_path', 'item_id'];
 
+    public function item(){
+        return $this->belongsTo(Item::class);
+    }
+
 }

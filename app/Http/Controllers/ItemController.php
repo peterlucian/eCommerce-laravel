@@ -6,22 +6,18 @@ use App\Models\Item;
 use App\Models\ImagePath;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller
 {
-
-    private $itemModel;
-    public function __construct( ){
-        $this->itemModel = new Item;
-    }
 
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $items = $this->itemModel->all();
-        return view('index', ['items'=> $items]);
+        $items = Item::all();
+        return view('items.index', ['items'=> $items]);
     }
 
     /**
@@ -50,12 +46,12 @@ class ItemController extends Controller
             DB::beginTransaction();
 
             $path = $request->file('thumbnail_path')->store('thumbnails', 'public');
-            $item = $this->itemModel->create([
+            $item = Item::create([
                 'name' => $data['name'],
                 'description'=> $data['description'],
                 'price'=> $data['price'],
                 'thumbnail_path' => 'storage/' . $path,
-                'user_id' => '1'
+                'user_id' => Auth::id(),
             ]);
 
             if ($request->hasFile('image_resource_path')) {
@@ -85,9 +81,8 @@ class ItemController extends Controller
      */
     public function show(string $id)
     {
-        $item = $this->itemModel->findOrFail($id);
-        $item_images = ImagePath::where("item_id","=", $item->id)->get();
-        return view('show', ["item" => $item,"item_images" => $item_images]);
+        $item = Item::with(['imagePath', 'user'])->findOrFail($id);
+        return view('items.show', ["item" => $item]);
     }
 
     /**

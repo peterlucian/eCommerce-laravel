@@ -224,13 +224,13 @@
                             <!-- Big Image -->
                             <div id="main-image-container">
                                 <img id="main-image"
-                                    class="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
+                                    class="h-auto w-full max-w-full object-fill rounded-lg object-cover object-center md:h-[480px]"
                                     src=""
                                     alt="Main Product Image" />
                             </div>
                             <!-- Small Images -->
                             <div class="grid grid-cols-5 gap-4">
-                                @forelse ( $item_images as $image)
+                                @forelse ( $item->imagePath as $image)
                                 <div>
                                     <img onclick="changeImage(this)"
                                     data-full="{{ asset($image->image_resource_path)}}"
@@ -276,23 +276,23 @@
                         <!-- Social sharing -->
                         <div class="flex space-x-4 my-6">
                             <a href="#" class="w-4 h-4 flex items-center justify-center">
-                                <img src="assets/images/social_icons/facebook.svg" alt="Facebook"
+                                <img src="/images/social_icons/facebook.svg" alt="Facebook"
                                     class="w-4 h-4 transition-transform transform hover:scale-110">
                             </a>
                             <a href="#" class="w-4 h-4 flex items-center justify-center">
-                                <img src="assets/images/social_icons/instagram.svg" alt="Instagram"
+                                <img src="/images/social_icons/instagram.svg" alt="Instagram"
                                     class="w-4 h-4 transition-transform transform hover:scale-110">
                             </a>
                             <a href="#" class="w-4 h-4 flex items-center justify-center">
-                                <img src="assets/images/social_icons/pinterest.svg" alt="Pinterest"
+                                <img src="/images/social_icons/pinterest.svg" alt="Pinterest"
                                     class="w-4 h-4 transition-transform transform hover:scale-110">
                             </a>
                             <a href="#" class="w-4 h-4 flex items-center justify-center">
-                                <img src="assets/images/social_icons/twitter.svg" alt="Twitter"
+                                <img src="/images/social_icons/twitter.svg" alt="Twitter"
                                     class="w-4 h-4 transition-transform transform hover:scale-110">
                             </a>
                             <a href="#" class="w-4 h-4 flex items-center justify-center">
-                                <img src="assets/images/social_icons/viber.svg" alt="Viber"
+                                <img src="/images/social_icons/viber.svg" alt="Viber"
                                     class="w-4 h-4 transition-transform transform hover:scale-110">
                             </a>
                         </div>
@@ -301,6 +301,10 @@
                             <h3 class="text-lg font-semibold mb-2">Product Description</h3>
                             <p>This is a premium quality t-shirt perfect for casual wear. Made with high-quality fabric
                                 to ensure comfort and durability.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Seller</h3>
+                            <p>{{ $item->user->email }}</p>
                         </div>
                     </div>
                 </div>
