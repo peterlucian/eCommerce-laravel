@@ -2,12 +2,19 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ItemController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 // Route::get("/", function(){
 //     return view("welcome");
 // });
 Route::redirect('/', '/items');
+Route::get('/items/list', function()    {
+    $items = User::with('item')->findOrFail(Auth::id());
+    //dd($items);
+    return view('items.list', ['items'=> $items]);
+})->name('items.list');
 Route::resource('/items', ItemController::class);
 
 Route::get('/dashboard', function () {

@@ -129,7 +129,7 @@
 
           <!-- Men Dropdown -->
           <li class="relative group" x-data="{ open: false }">
-              <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-center items-center cursor-pointer">
+              <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-start items-center cursor-pointer">
                 <span>Men</span>
                 <span @click.stop="open = !open">
                     <i :class="open ? 'fas fa-chevron-up text-xs ml-2' : 'fas fa-chevron-down text-xs ml-2'"></i>
@@ -145,7 +145,7 @@
 
           <!-- Women Dropdown -->
           <li class="relative group" x-data="{ open: false }">
-              <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-center items-center cursor-pointer">
+              <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-start items-center cursor-pointer">
                     <span>Women</span>
                     <span @click.stop="open = !open">
                         <i :class="open ? 'fas fa-chevron-up text-xs ml-2' : 'fas fa-chevron-down text-xs ml-2'"></i>
@@ -165,31 +165,33 @@
           <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">Checkout</a></li>
       </ul>
       <div class="flex flex-col mt-6 space-y-2 items-center">
-          {{-- <a href="register.html"
-              class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Register</a>
-          <a href="register.html"
-              class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Login</a>
-          <a href="register.html"
-              class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Cart -&nbsp;<span>5</span>&nbsp;items</a> --}}
-            @auth
-                <a href="{{ url('/dashboard') }}"
-                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
-                Dashboard
-                </a>
-            @else
-                <a href="{{ route('login') }}"
-                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
-                Log in
-                </a>
+        {{-- <a href="register.html"
+            class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-start min-w-[110px]">Register</a>
+        <a href="register.html"
+            class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-start min-w-[110px]">Login</a> --}}
+       @auth
+            <a href="{{ url('/dashboard') }}"
+            class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">
+            Dashboard
+            </a>
+        @else
+            <a href="{{ route('login') }}"
+            class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">
+            Log in
+            </a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"
-                        class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
-                        Register
-                        </a>
-                    @endif
-            @endauth
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}"
+                    class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">
+                    Register
+                    </a>
+                @endif
+        @endauth
+        <a href="register.html"
+            class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Cart -&nbsp;<span>5</span>&nbsp;items</a>
+
         </div>
+
       <!-- Search field -->
       <div
           class="  top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">

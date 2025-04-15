@@ -124,11 +124,11 @@
         <!-- Mobile menu -->
         <nav id="mobile-menu-placeholder" class="mobile-menu hidden flex flex-col items-center space-y-8 lg:hidden">
         <ul class="w-full">
-            <li><a href="index.html" class="hover:text-secondary font-bold block py-2">Home</a></li>
+            <li><a href="{{route('items.index')}}" class="hover:text-secondary font-bold block py-2">Home</a></li>
 
             <!-- Men Dropdown -->
             <li class="relative group" x-data="{ open: false }">
-                <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-center items-center cursor-pointer">
+                <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-start items-center cursor-pointer">
                     <span>Men</span>
                     <span @click.stop="open = !open">
                         <i :class="open ? 'fas fa-chevron-up text-xs ml-2' : 'fas fa-chevron-down text-xs ml-2'"></i>
@@ -144,7 +144,7 @@
 
             <!-- Women Dropdown -->
             <li class="relative group" x-data="{ open: false }">
-                <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-center items-center cursor-pointer">
+                <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-start items-center cursor-pointer">
                         <span>Women</span>
                         <span @click.stop="open = !open">
                             <i :class="open ? 'fas fa-chevron-up text-xs ml-2' : 'fas fa-chevron-down text-xs ml-2'"></i>
@@ -164,13 +164,32 @@
             <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">Checkout</a></li>
         </ul>
         <div class="flex flex-col mt-6 space-y-2 items-center">
+            {{-- <a href="register.html"
+                class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-start min-w-[110px]">Register</a>
             <a href="register.html"
-                class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Register</a>
-            <a href="register.html"
-                class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Login</a>
+                class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-start min-w-[110px]">Login</a> --}}
+           @auth
+                <a href="{{ url('/dashboard') }}"
+                class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">
+                Dashboard
+                </a>
+            @else
+                <a href="{{ route('login') }}"
+                class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">
+                Log in
+                </a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}"
+                        class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">
+                        Register
+                        </a>
+                    @endif
+            @endauth
             <a href="register.html"
                 class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Cart -&nbsp;<span>5</span>&nbsp;items</a>
-        </div>
+
+            </div>
         <!-- Search field -->
         <div
             class="  top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">

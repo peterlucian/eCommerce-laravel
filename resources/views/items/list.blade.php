@@ -10,6 +10,15 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg px-6">
                 <div class="py-6 text-gray-900">
                     {{ __("You're logged in!") }}
+
+                    @forelse ( $items->item as $toy)
+                        <p>{{$toy->name}}</p>
+                        <p>{{$toy->description}}</p>
+                        <p>{{$toy->price}}</p>
+                        <p>{{$toy->created_at}}</p>
+                    @empty
+
+                    @endforelse
                 </div>
             </div>
         </div>
