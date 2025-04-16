@@ -497,23 +497,23 @@
                 <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
                 <ul>
                     <li class="flex items-center mb-2">
-                    <img src="/assets/images/social_icons/facebook.svg" alt="Facebook" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                    <img src="/images/social_icons/facebook.svg" alt="Facebook" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                     <a href="#" class="hover:text-primary">Facebook</a>
                     </li>
                     <li class="flex items-center mb-2">
-                    <img src="/assets/images/social_icons/twitter.svg" alt="Twitter" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                    <img src="/images/social_icons/twitter.svg" alt="Twitter" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                     <a href="#" class="hover:text-primary">Twitter</a>
                     </li>
                     <li class="flex items-center mb-2">
-                    <img src="/assets/images/social_icons/instagram.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                    <img src="/images/social_icons/instagram.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                     <a href="#" class="hover:text-primary">Instagram</a>
                     </li>
                     <li class="flex items-center mb-2">
-                    <img src="/assets/images/social_icons/pinterest.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                    <img src="/images/social_icons/pinterest.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                     <a href="#" class="hover:text-primary">Pinterest</a>
                     </li>
                     <li class="flex items-center mb-2">
-                    <img src="/assets/images/social_icons/youtube.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                    <img src="/images/social_icons/youtube.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                     <a href="#" class="hover:text-primary">YouTube</a>
                     </li>
                 </ul>
@@ -521,7 +521,7 @@
                 <!-- Contact Information -->
                 <div class="w-full sm:w-2/6 px-4 mb-8">
                 <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
-                <p><img src="assets/images/template-logo.png" alt="Logo" class="h-[60px] mb-4"></p>
+                <p><img src="/images/template-logo.png" alt="Logo" class="h-[60px] mb-4"></p>
                 <p>123 Street Name, Paris, France</p>
                 <p class="text-xl font-bold my-4">Phone: (123) 456-7890</p>
                 <a href="mailto:info@company.com" class="underline">Email: info@company.com</a>

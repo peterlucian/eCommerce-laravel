@@ -7,6 +7,8 @@ use App\Models\ImagePath;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ItemController extends Controller
 {
@@ -81,8 +83,8 @@ class ItemController extends Controller
      */
     public function show(string $id)
     {
-        $item = Item::with(['imagePath', 'user'])->findOrFail($id);
-        return view('items.show', ["item" => $item]);
+        //$item = Item::with(['imagePath', 'user'])->findOrFail($id);
+        return view('items.show', ["item" => Item::with(['imagePath', 'user'])->findOrFail($id)]);
     }
 
     /**
@@ -90,7 +92,8 @@ class ItemController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //dd(Item::with(['imagePath', 'user'])->findOrFail($id));
+        return view('items.edit', ["item" => Item::with(['imagePath', 'user'])->findOrFail($id)]);
     }
 
     /**
@@ -98,7 +101,62 @@ class ItemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'price' => 'required|numeric|min:0',
+            'thumbnail_path.*' => 'nullable|image|mimes:jpg,png,jpeg|max:2048', // Validate multiple images
+            'images' => 'array',
+            'images.*' => 'integer|exists:image_paths,id'
+        ]);
+
+        $item = Item::findOrFail($id);
+
+        // Update base fields
+        $item->name = $request->input('name');
+        $item->description = $request->input('description');
+        $item->price = $request->input('price');
+
+        // Handle thumbnail upload
+        if ($request->hasFile('thumbnail_path')) {
+            // Delete old thumbnail if exists
+            if ( $item->thumbnail_path ) {
+                $relativePath = Str::after($item->thumbnail_path, 'storage/');
+                if (Storage::disk('public')->exists($relativePath)) {
+                    Storage::disk('public')->delete($relativePath);
+                }
+            }
+
+            $path = $request->file('thumbnail_path')->store('thumbnails', 'public');
+            $item->thumbnail_path = 'storage/' . $path;
+        }
+
+        $item->save();
+
+        // Handle carousel images
+        $DeleteImageIds = $request->input('images', []); // Default to empty array if not sent
+
+        // Delete images not in the list
+        $item->imagePath()->whereIn('id', $DeleteImageIds)->get()->each(function ($image) {
+            $relativePath = Str::after($image->image_resource_path, 'storage/');
+            if (Storage::disk('public')->exists($relativePath)) {
+                Storage::disk('public')->delete($relativePath);
+            }
+            $image->delete();
+        });
+
+        if ($request->hasFile('image_resource_path')) {
+            foreach ($request->file('image_resource_path') as $image) {
+                $path = $image->store('images', 'public');
+
+                $item->imagePath()->create([
+                    'image_resource_path'=> 'storage/' . $path,
+                ]);
+            }
+        }
+
+        return redirect()->route('items.index')->with('success','Item updated succefully!');
+
     }
 
     /**
