@@ -114,8 +114,17 @@
                 <!-- Search field -->
                 <div id="search-field"
                     class="hidden absolute top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
-                    <input type="text" class="w-full p-2 border border-gray-300 rounded"
+                    <form action="{{route('items.index')}}" method="GET">
+                    <input type="text" class="w-full p-2 border font-semibold text-opacity-60 border-gray-300 rounded" name="search_input"
                         placeholder="Search for products...">
+                        <div class="flex flex-row space-x-1">
+                        <select id="underline_select" name="search_type" class="inline-block w-full font-semibold px-2 py-1.5 text-opacity-60 border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm">
+                            <option selected value="title">Title</option>
+                            <option value="author">Author</option>
+                        </select>
+                        <button type="submit" class="inline-block font-semibold px-2 py-1.5 text-opacity-60 border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm">Search</button>
+                        <button type="submit" class="inline-block font-semibold px-2 py-1.5 text-opacity-85 border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm">Reset</button>
+                    </div></form>
                 </div>
             </div>
             </div>
@@ -191,10 +200,18 @@
 
             </div>
         <!-- Search field -->
-        <div
-            class="  top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
-            <input type="text" class="w-full p-2 border border-gray-300 rounded"
+        <div class="top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
+            <form action="{{route('items.index')}}" method="GET">
+            <input type="text" class="w-full p-2 border font-semibold border-gray-300 text-opacity-60 rounded" name="search_input"
                 placeholder="Search for products...">
+                <div class="flex flex-row space-x-1">
+                <select id="underline_select" name="search_type" class="inline-block w-full font-semibold px-2 py-1.5 text-opacity-60 border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm">
+                    <option selected value="title">Title</option>
+                    <option value="author">Author</option>
+                </select>
+                <button type="submit" class="inline-block font-semibold px-2 py-1.5 text-opacity-60 border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm">Search</button>
+                <button type="submit" class="inline-block font-semibold px-2 py-1.5 text-opacity-85 border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm">Reset</button>
+            </div></form>
         </div>
         </nav>
 

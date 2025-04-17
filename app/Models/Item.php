@@ -20,4 +20,13 @@ class Item extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function scopeFilterByTitle($query, $title){
+        return $query->where('name','like','%'. $title .'%');
+    }
+    public function scopeFilterByAuthor($query, $email){
+        return $query->whereHas('user', function ($q) use ($email) {
+            $q->where('email', 'like', '%' . $email . '%');
+        })->with('user');
+    }
 }

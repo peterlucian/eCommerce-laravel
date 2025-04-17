@@ -16,9 +16,16 @@ class ItemController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(  Request $request)
     {
-        $items = Item::all();
+        $filter = $request->get("search_type");
+        $search_input = $request->get("search_input");
+        $items = match ($filter) {
+            "title" => Item::filterByTitle($search_input)->get(),
+            'author' => Item::filterByAuthor($search_input)->get(),
+            default => Item::all(),
+        };
+
         return view('items.index', ['items'=> $items]);
     }
 
