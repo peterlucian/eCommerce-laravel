@@ -11,9 +11,12 @@ use App\Models\User;
 // });
 Route::redirect('/', '/items');
 Route::get('/items/list', function()    {
-    $items = User::with('item')->findOrFail(Auth::id());
-    //dd($items);
-    return view('items.list', ['items'=> $items]);
+    $users = Auth::user()->role === 'admin'
+    ? User::with('item')->has('item')->get()
+    : collect([User::with('item')->findOrFail(Auth::id())])->filter(function ($user) {
+        return $user->item->isNotEmpty();
+    });
+    return view('items.list', ['users'=> $users]);
 })->name('items.list');
 Route::resource('/items', ItemController::class);
 

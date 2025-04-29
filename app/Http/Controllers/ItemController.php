@@ -29,6 +29,18 @@ class ItemController extends Controller
         return view('items.index', ['items'=> $items]);
     }
 
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+
+        Item::findOrFail($id)->delete();
+        return redirect()->route('items.index')->with('success','Item deleted succefully!');
+
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -166,11 +178,4 @@ class ItemController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

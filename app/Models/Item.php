@@ -27,6 +27,9 @@ class Item extends Model
     public function scopeFilterByAuthor($query, $email){
         return $query->whereHas('user', function ($q) use ($email) {
             $q->where('email', 'like', '%' . $email . '%');
-        })->with('user');
+        });
+        // return $query->whereHas('user', function ($q) use ($email) {
+        //     $q->where('email', 'like', '%' . $email . '%');
+        // })->with('user');
     }
 }

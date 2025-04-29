@@ -113,8 +113,8 @@
                 </a>
                 <!-- Search field -->
                 <div id="search-field"
-                    class="hidden absolute top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
-                    <form action="{{route('items.index')}}" method="GET">
+                    class="hidden absolute top-full right-0 mt-2 w-96 bg-white shadow-lg p-2 rounded">
+                    <form action="{{route('items.index')}}" method="GET" class="w-150">
                     <input type="text" class="w-full p-2 border font-semibold text-opacity-60 border-gray-300 rounded" name="search_input"
                         placeholder="Search for products...">
                         <div class="flex flex-row space-x-1">
