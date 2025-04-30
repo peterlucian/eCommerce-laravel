@@ -34,6 +34,11 @@
                             <div class="flex flex-row border-2 border-solid min-w-max space-x-5 p-2 items-center">
                                     <p>No items in database.</p></div>
                         @endforelse
+
+
+                    </div>
+                    <div class="mt-4">
+                        {{$users->links('pagination::tailwind')}}
                     </div>
                 </div>
             </div>

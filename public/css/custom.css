@@ -96,8 +96,8 @@ a {
 
 .main-slider .swiper-slide img {
     width: 100%;
-    height: auto;
-    max-height: 800px;
+    height: 750px;
+    max-height: 750px;
     object-fit: cover;
 }
 

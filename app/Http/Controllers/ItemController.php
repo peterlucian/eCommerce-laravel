@@ -21,12 +21,12 @@ class ItemController extends Controller
         $filter = $request->get("search_type");
         $search_input = $request->get("search_input");
         $items = match ($filter) {
-            "title" => Item::filterByTitle($search_input)->get(),
-            'author' => Item::filterByAuthor($search_input)->get(),
-            default => Item::all(),
+            "title" => Item::filterByTitle($search_input),
+            'author' => Item::filterByAuthor($search_input),
+            default => Item::query(),
         };
 
-        return view('items.index', ['items'=> $items]);
+        return view('items.index', ['items'=> $items->paginate(1)]);
     }
 
 

@@ -25,10 +25,10 @@
             <!-- Center section: Menu -->
             <nav class="hidden lg:flex md:flex-grow justify-center">
               <ul class="flex justify-center space-x-4 text-white">
-                  <li><a href="index.html" class="hover:text-secondary font-semibold">Home</a></li>
+                  <li><a href="{{route("items.index")}}" class="hover:text-secondary font-semibold">Home</a></li>
 
                   <!-- Men Dropdown -->
-                  <li class="relative group" x-data="{ open: false }">
+                  {{-- <li class="relative group" x-data="{ open: false }">
                       <a href="shop.html" @mouseover="open = true" @mouseleave="open = false" href="#" class="hover:text-secondary font-semibold flex items-center">
                           Men
                           <i :class="open ? 'fas fa-chevron-up ml-1 text-xs' : 'fas fa-chevron-down ml-1 text-xs'"></i>
@@ -49,10 +49,10 @@
                           <li><a href="shop.html" class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Men Item 2</a></li>
                           <li><a href="shop.html" class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Men Item 3</a></li>
                       </ul>
-                  </li>
+                  </li> --}}
 
                   <!-- Women Dropdown -->
-                  <li class="relative group" x-data="{ open: false }">
+                  {{-- <li class="relative group" x-data="{ open: false }">
                       <a href="shop.html" @mouseover="open = true" @mouseleave="open = false" href="#" class="hover:text-secondary font-semibold flex items-center">
                           Women
                           <i :class="open ? 'fas fa-chevron-up ml-1 text-xs' : 'fas fa-chevron-down ml-1 text-xs'"></i>
@@ -78,7 +78,7 @@
                   <li><a href="shop.html" class="hover:text-secondary font-semibold">Shop</a></li>
                   <li><a href="single-product-page.html" class="hover:text-secondary font-semibold">Product</a></li>
                   <li><a href="404.html" class="hover:text-secondary font-semibold">404 page</a></li>
-                  <li><a href="checkout.html" class="hover:text-secondary font-semibold">Checkout</a></li>
+                  <li><a href="checkout.html" class="hover:text-secondary font-semibold">Checkout</a></li> --}}
               </ul>
             </nav>
 
@@ -136,7 +136,7 @@
             <li><a href="{{route('items.index')}}" class="hover:text-secondary font-bold block py-2">Home</a></li>
 
             <!-- Men Dropdown -->
-            <li class="relative group" x-data="{ open: false }">
+            {{-- <li class="relative group" x-data="{ open: false }">
                 <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-start items-center cursor-pointer">
                     <span>Men</span>
                     <span @click.stop="open = !open">
@@ -149,10 +149,10 @@
                     <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Men item 2</a></li>
                     <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Men item 3</a></li>
                 </ul>
-            </li>
+            </li> --}}
 
             <!-- Women Dropdown -->
-            <li class="relative group" x-data="{ open: false }">
+            {{-- <li class="relative group" x-data="{ open: false }">
                 <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-start items-center cursor-pointer">
                         <span>Women</span>
                         <span @click.stop="open = !open">
@@ -165,12 +165,12 @@
                     <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Women item 2</a></li>
                     <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Women item 3</a></li>
                 </ul>
-            </li>
+            </li> --}}
 
-            <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">Shop</a></li>
+            {{-- <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">Shop</a></li>
             <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Product</a></li>
             <li><a href="404.html" class="hover:text-secondary font-bold block py-2">404 page</a></li>
-            <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">Checkout</a></li>
+            <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">Checkout</a></li> --}}
         </ul>
         <div class="flex flex-col mt-6 space-y-2 items-center">
             {{-- <a href="register.html"
@@ -221,35 +221,35 @@
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
-                        <img src="/images/main-slider/5.jpg" alt="Product 1">
+                        <img src="/images/main-slider/doraemon.jpg" alt="Product 1">
                         <div class="swiper-slide-content">
-                        <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Women</h2>
+                        <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Doraemon</h2>
                         <p class="mb-4 text-white md:text-2xl">Experience the best in sportswear with <br>our latest collection.</p>
-                            <a href="/"
+                            {{-- <a href="/"
                                 class="bg-primary hover:bg-transparent text-white hover:text-white border border-transparent hover:border-white font-semibold px-4 py-2 rounded-full inline-block">Shop
-                                now</a>
+                                now</a> --}}
                         </div>
                     </div>
                     <!-- Slide 2 -->
                     <div class="swiper-slide">
-                        <img src="/images/main-slider/2.png" alt="Product 2">
+                        <img src="/images/main-slider/anime.jpg" alt="Product 2">
                         <div class="swiper-slide-content">
-                        <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Men</h2>
+                        <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Animel</h2>
                         <p class="mb-4 text-white md:text-2xl">Discover the latest trends in Men`s <br>sportswear and casual fashion.</p>
-                            <a href="/"
+                            {{-- <a href="/"
                                 class="bg-white hover:bg-transparent text-black hover:text-white font-semibold px-4 py-2 rounded-full inline-block border border-transparent hover:border-white">Shop
-                                now</a>
+                                now</a> --}}
                         </div>
                     </div>
                     <!-- Slide 3 -->
                     <div class="swiper-slide">
-                        <img src="/images/main-slider/4.jpg" alt="Product 3">
+                        <img src="/images/main-slider/dragonball.jpeg" alt="Product 3">
                         <div class="swiper-slide-content">
-                        <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Accessories</h2>
+                        <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Dragon Ball</h2>
                         <p class="mb-4 text-white md:text-2xl">Elevate your style with our latest <br>sportswear collection.</p>
-                            <a href="/"
+                            {{-- <a href="/"
                                 class="bg-primary hover:bg-transparent text-white hover:text-white border border-transparent hover:border-white font-semibold px-4 py-2 rounded-full inline-block">Shop
-                                now</a>
+                                now</a> --}}
                         </div>
                     </div>
                 </div>
@@ -322,7 +322,7 @@
                             <p class="my-2">{{$item->description}}</p>
                             <div class="flex items-center mb-4">
                             <span class="text-lg font-bold text-primary">{{$item->price}}</span>
-                            <span class="text-sm line-through ml-2">$24.99</span>
+                            {{-- <span class="text-sm line-through ml-2">$24.99</span> --}}
                             </div>
                             <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add to Cart</button>
                         </div>
@@ -332,6 +332,9 @@
                         <div class="bg-white p-3 rounded-lg shadow-lg">
                         <p>No items.</p></div>
                     @endforelse
+
+
+
 
 
                     <!-- Product 1 -->
@@ -348,11 +351,14 @@
                     </div>
                     </div> --}}
                 </div>
+                <div class="mt-4">
+                    {{$items->links('pagination::tailwind')}}
+                </div>
             </div>
         </section>
 
         <!-- Brand section -->
-        <section id="brands" class="bg-white py-16 px-4">
+        {{-- <section id="brands" class="bg-white py-16 px-4">
             <div class="container mx-auto max-w-screen-xl px-4 testimonials">
             <div class="text-center mb-12 lg:mb-20">
                 <h2 class="text-5xl font-bold mb-4">Discover <span class="text-primary">Our Brands</span></h2>
@@ -398,18 +404,18 @@
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
-        </section>
+        </section> --}}
 
         <!-- Banner section -->
         <section id="banner" class="relative my-16">
-            <div class="container mx-auto px-4 py-20 rounded-lg relative bg-cover bg-center" style="background-image: url('/images/banner1.jpg');">
+            <div class="container mx-auto px-4 py-20 rounded-lg relative bg-cover bg-center" style="background-image: url('/images/my3d.jpg');">
                 <div class="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
                 <div class="relative flex flex-col items-center justify-center h-full text-center text-white py-20">
-                    <h2 class="text-4xl font-bold mb-4">Welcome to Our Shop</h2>
+                    <h2 class="text-4xl font-bold mb-4">Welcome to Our website</h2>
                     <div class="flex space-x-4">
                         <a href="#" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-transparent hover:border-primary font-semibold px-4 py-2 rounded-full inline-block">Shop Now</a>
                         <a href="#" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-transparent hover:border-primary font-semibold px-4 py-2 rounded-full inline-block">New Arrivals</a>
-                        <a href="#" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-transparent hover:border-primary font-semibold px-4 py-2 rounded-full inline-block">Sale</a>
+                        {{-- <a href="#" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-transparent hover:border-primary font-semibold px-4 py-2 rounded-full inline-block">Sale</a> --}}
                     </div>
                 </div>
             </div>
@@ -418,8 +424,8 @@
         <!-- Blog section -->
         <section class="py-16">
         <div class="text-center mb-12 lg:mb-20">
-            <h2 class="text-5xl font-bold mb-4">Discover <span class="text-primary">Our</span> Blog</h2>
-            <p class="my-7">Stay updated with the latest trends, tips, and stories in the world of fashion</p>
+            <h2 class="text-5xl font-bold mb-4">Discover <span class="text-primary">Our</span> Website</h2>
+            <p class="my-7">Stay updated with the latest trends, tips, and models of 3d print.</p>
         </div>
         <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
             <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">

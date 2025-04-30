@@ -26,10 +26,10 @@
             <!-- Center section: Menu -->
             <nav class="hidden lg:flex md:flex-grow justify-center">
               <ul class="flex justify-center space-x-4 text-white">
-                  <li><a href="index.html" class="hover:text-secondary font-semibold">Home</a></li>
+                  <li><a href="{{route("items.index")}}" class="hover:text-secondary font-semibold">Home</a></li>
 
                   <!-- Men Dropdown -->
-                  <li class="relative group" x-data="{ open: false }">
+                  {{-- <li class="relative group" x-data="{ open: false }">
                       <a href="shop.html" @mouseover="open = true" @mouseleave="open = false" href="#" class="hover:text-secondary font-semibold flex items-center">
                           Men
                           <i :class="open ? 'fas fa-chevron-up ml-1 text-xs' : 'fas fa-chevron-down ml-1 text-xs'"></i>
@@ -50,10 +50,10 @@
                           <li><a href="shop.html" class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Men Item 2</a></li>
                           <li><a href="shop.html" class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Men Item 3</a></li>
                       </ul>
-                  </li>
+                  </li> --}}
 
                   <!-- Women Dropdown -->
-                  <li class="relative group" x-data="{ open: false }">
+                  {{-- <li class="relative group" x-data="{ open: false }">
                       <a href="shop.html" @mouseover="open = true" @mouseleave="open = false" href="#" class="hover:text-secondary font-semibold flex items-center">
                           Women
                           <i :class="open ? 'fas fa-chevron-up ml-1 text-xs' : 'fas fa-chevron-down ml-1 text-xs'"></i>
@@ -79,7 +79,7 @@
                   <li><a href="shop.html" class="hover:text-secondary font-semibold">Shop</a></li>
                   <li><a href="single-product-page.html" class="hover:text-secondary font-semibold">Product</a></li>
                   <li><a href="404.html" class="hover:text-secondary font-semibold">404 page</a></li>
-                  <li><a href="checkout.html" class="hover:text-secondary font-semibold">Checkout</a></li>
+                  <li><a href="checkout.html" class="hover:text-secondary font-semibold">Checkout</a></li> --}}
               </ul>
             </nav>
 
@@ -128,7 +128,7 @@
           <li><a href="index.html" class="hover:text-secondary font-bold block py-2">Home</a></li>
 
           <!-- Men Dropdown -->
-          <li class="relative group" x-data="{ open: false }">
+          {{-- <li class="relative group" x-data="{ open: false }">
               <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-start items-center cursor-pointer">
                 <span>Men</span>
                 <span @click.stop="open = !open">
@@ -141,10 +141,10 @@
                   <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Men item 2</a></li>
                   <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Men item 3</a></li>
               </ul>
-          </li>
+          </li> --}}
 
           <!-- Women Dropdown -->
-          <li class="relative group" x-data="{ open: false }">
+          {{-- <li class="relative group" x-data="{ open: false }">
               <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold block py-2 flex justify-start items-center cursor-pointer">
                     <span>Women</span>
                     <span @click.stop="open = !open">
@@ -162,7 +162,7 @@
           <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">Shop</a></li>
           <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Product</a></li>
           <li><a href="404.html" class="hover:text-secondary font-bold block py-2">404 page</a></li>
-          <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">Checkout</a></li>
+          <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">Checkout</a></li> --}}
       </ul>
       <div class="flex flex-col mt-6 space-y-2 items-center">
         {{-- <a href="register.html"
@@ -201,10 +201,10 @@
     </nav>
 
     <!-- Breadcrumbs -->
-    <section id="breadcrumbs" class="pt-6 bg-gray-50">
+    {{-- <section id="breadcrumbs" class="pt-6 bg-gray-50">
         <div class="container mx-auto px-4">
             <ol class="list-reset flex">
-                <li><a href="index.html" class="font-semibold hover:text-primary">Home</a></li>
+                <li><a href="{{route("items.index")}}" class="font-semibold hover:text-primary">Home</a></li>
                 <li><span class="mx-2">&gt;</span></li>
                 <li><a href="shop.html" class="font-semibold hover:text-primary">Shop</a></li>
                 <li><span class="mx-2">&gt;</span></li>
@@ -213,7 +213,7 @@
                 <li>Preppy T-shirt</li>
             </ol>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Product info -->
     <section id="product-info">
@@ -249,8 +249,8 @@
                     <!-- Product Details Section -->
                     <div class="w-full lg:w-1/2 flex flex-col justify-between">
                         <div class="pb-8 border-b border-gray-line">
-                            <h1 class="text-3xl font-bold mb-4">Preppy T-shirt</h1>
-                            <div class="flex items-center mb-8">
+                            <h1 class="text-3xl font-bold mb-4">{{$item->name}}</h1>
+                            {{-- <div class="flex items-center mb-8">
                                 <span>★★★★★</span>
                                 <span class="ml-2">(0 Reviews)</span>
                                 <a href="#" class="ml-4 text-primary font-semibold">Write a review</a>
@@ -260,9 +260,9 @@
                                 </p>
                                 <p class="mb-2">Product code:<strong> 00123</strong></p>
                                 <p class="mb-2">Availability:<strong> In Stock</strong></p>
-                            </div>
-                            <div class="text-2xl font-semibold mb-8">$40.00</div>
-                            <div class="flex items-center mb-8">
+                            </div> --}}
+                            <div class="text-2xl font-semibold mb-8">{{$item->price}} €</div>
+                            {{-- <div class="flex items-center mb-8">
                                 <button id="decrease"
                                     class="bg-primary hover:bg-transparent border border-transparent hover:border-primary text-white hover:text-primary font-semibold w-10 h-10 rounded-full flex items-center justify-center focus:outline-none"
                                     disabled>-</button>
@@ -274,7 +274,7 @@
                             <button
                                 class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full">Add
                                 to Cart</button>
-                        </div>
+                        </div> --}}
                         <!-- Social sharing -->
                         <div class="flex space-x-4 my-6">
                             <a href="#" class="w-4 h-4 flex items-center justify-center">
@@ -301,8 +301,7 @@
                         <!-- Additional Information -->
                         <div>
                             <h3 class="text-lg font-semibold mb-2">Product Description</h3>
-                            <p>This is a premium quality t-shirt perfect for casual wear. Made with high-quality fabric
-                                to ensure comfort and durability.</p>
+                            <p>{{$item->description}}</p>
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold mb-2">Seller</h3>
@@ -315,7 +314,7 @@
     </section>
 
     <!-- Product tabs description -->
-    <section>
+    {{-- <section>
         <div class="container mx-auto">
             <div class="py-12">
                 <div class="mt-10">
@@ -585,7 +584,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Latest-products -->
     <section id="latest-products" class="py-10">
@@ -687,23 +686,23 @@
             <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
             <ul>
                 <li class="flex items-center mb-2">
-                <img src="/assets/images/social_icons/facebook.svg" alt="Facebook" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                <img src="/images/social_icons/facebook.svg" alt="Facebook" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                 <a href="#" class="hover:text-primary">Facebook</a>
                 </li>
                 <li class="flex items-center mb-2">
-                <img src="/assets/images/social_icons/twitter.svg" alt="Twitter" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                <img src="/images/social_icons/twitter.svg" alt="Twitter" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                 <a href="#" class="hover:text-primary">Twitter</a>
                 </li>
                 <li class="flex items-center mb-2">
-                <img src="/assets/images/social_icons/instagram.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                <img src="/images/social_icons/instagram.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                 <a href="#" class="hover:text-primary">Instagram</a>
                 </li>
                 <li class="flex items-center mb-2">
-                <img src="/assets/images/social_icons/pinterest.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                <img src="/images/social_icons/pinterest.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                 <a href="#" class="hover:text-primary">Pinterest</a>
                 </li>
                 <li class="flex items-center mb-2">
-                <img src="/assets/images/social_icons/youtube.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                <img src="/images/social_icons/youtube.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                 <a href="#" class="hover:text-primary">YouTube</a>
                 </li>
             </ul>
