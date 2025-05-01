@@ -93,6 +93,12 @@
                     class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
                     Dashboard
                     </a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit"
+                    class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">Log out </button>
+
+                    </form>
                 @else
                     <a href="{{ route('login') }}"
                     class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
@@ -182,6 +188,11 @@
                 class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">
                 Dashboard
                 </a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit"
+                class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Log out </button>
+                </form>
             @else
                 <a href="{{ route('login') }}"
                 class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">
@@ -318,14 +329,14 @@
                     <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
                         <div class="bg-white p-3 rounded-lg shadow-lg">
                             <img src="{{ asset($item->thumbnail_path)}}" alt="Product" class="w-full object-cover mb-4 rounded-lg">
-                            <a href="{{route('items.show', [$item])}}" class="text-lg font-semibold mb-2">{{$item->name}}</a>
+                            <p class="my-2">{{$item->name}}</p>
                             <p class="my-2">{{$item->description}}</p>
                             <div class="flex items-center mb-4">
                             <span class="text-lg font-bold text-primary">{{$item->price}}</span>
                             {{-- <span class="text-sm line-through ml-2">$24.99</span> --}}
-                            </div>
-                            <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add to Cart</button>
-                        </div>
+                            </div><a href="{{route('items.show', [$item])}}">
+                            <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">View</button>
+                        </a></div>
                     </div>
                     @empty
                     <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">

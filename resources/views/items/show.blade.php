@@ -74,12 +74,12 @@
                           <li><a href="shop.html" class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Women Item 2</a></li>
                           <li><a href="shop.html" class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Women Item 3</a></li>
                       </ul>
-                  </li>
+                  </li> --}}
 
-                  <li><a href="shop.html" class="hover:text-secondary font-semibold">Shop</a></li>
-                  <li><a href="single-product-page.html" class="hover:text-secondary font-semibold">Product</a></li>
-                  <li><a href="404.html" class="hover:text-secondary font-semibold">404 page</a></li>
-                  <li><a href="checkout.html" class="hover:text-secondary font-semibold">Checkout</a></li> --}}
+                  <li><a href="{{route('items.index')}}" class="hover:text-secondary font-semibold">Shop</a></li>
+                  <li><a href="" class="hover:text-secondary font-semibold">Product</a></li>
+                  <li><a href="" class="hover:text-secondary font-semibold">404 page</a></li>
+                 {{-- <li><a href="checkout.html" class="hover:text-secondary font-semibold">Checkout</a></li> --}}
               </ul>
             </nav>
 
@@ -94,6 +94,12 @@
                     class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
                     Dashboard
                     </a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                    <button type="submit"
+                    class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"> Log out </button>
+
+                    </form>
                 @else
                     <a href="{{ route('login') }}"
                     class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
@@ -125,7 +131,7 @@
     <!-- Mobile menu -->
     <nav id="mobile-menu-placeholder" class="mobile-menu hidden flex flex-col items-center space-y-8 lg:hidden">
       <ul class="w-full">
-          <li><a href="index.html" class="hover:text-secondary font-bold block py-2">Home</a></li>
+          <li><a href="{{route('items.index')}}" class="hover:text-secondary font-bold block py-2">Home</a></li>
 
           <!-- Men Dropdown -->
           {{-- <li class="relative group" x-data="{ open: false }">
@@ -157,12 +163,12 @@
                   <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Women item 2</a></li>
                   <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Women item 3</a></li>
               </ul>
-          </li>
+          </li> --}}
 
-          <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">Shop</a></li>
-          <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Product</a></li>
-          <li><a href="404.html" class="hover:text-secondary font-bold block py-2">404 page</a></li>
-          <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">Checkout</a></li> --}}
+        <li><a href="{{route('items.index')}}" class="hover:text-secondary font-bold block py-2">Shop</a></li>
+          <li><a href="" class="hover:text-secondary font-bold block py-2">Product</a></li>
+          <li><a href="" class="hover:text-secondary font-bold block py-2">404 page</a></li>
+          {{-- <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">Checkout</a></li> --}}
       </ul>
       <div class="flex flex-col mt-6 space-y-2 items-center">
         {{-- <a href="register.html"
@@ -174,6 +180,12 @@
             class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">
             Dashboard
             </a>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit"
+            class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]"> Log out </button>
+
+            </form>
         @else
             <a href="{{ route('login') }}"
             class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">
@@ -187,17 +199,17 @@
                     </a>
                 @endif
         @endauth
-        <a href="register.html"
-            class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Cart -&nbsp;<span>5</span>&nbsp;items</a>
+        {{-- <a href="register.html"
+            class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Cart -&nbsp;<span>5</span>&nbsp;items</a> --}}
 
         </div>
 
       <!-- Search field -->
-      <div
+      {{-- <div
           class="  top-full right-0 mt-2 w-full bg-white shadow-lg p-2 rounded">
           <input type="text" class="w-full p-2 border border-gray-300 rounded"
               placeholder="Search for products...">
-      </div>
+      </div> --}}
     </nav>
 
     <!-- Breadcrumbs -->
@@ -587,7 +599,7 @@
     </section> --}}
 
     <!-- Latest-products -->
-    <section id="latest-products" class="py-10">
+    {{-- <section id="latest-products" class="py-10">
         <div class="container mx-auto px-4">
             <h2 class="text-2xl font-bold mb-8">Latest products</h2>
             <div class="flex flex-wrap -mx-4">
@@ -644,7 +656,7 @@
                 </div>
               </div>
         </div>
-    </section>
+    </section> --}}
 
      <!-- Footer -->
      <footer class="border-t border-gray-line">
@@ -652,7 +664,7 @@
         <div class="container mx-auto px-4 py-10">
         <div class="flex flex-wrap -mx-4">
             <!-- Menu 1 -->
-            <div class="w-full sm:w-1/6 px-4 mb-8">
+            {{-- <div class="w-full sm:w-1/6 px-4 mb-8">
             <h3 class="text-lg font-semibold mb-4">Shop</h3>
             <ul>
                 <li><a href="/shop.html" class="hover:text-primary">Shop</a></li>
@@ -661,9 +673,9 @@
                 <li><a href="/single-product-page.html" class="hover:text-primary">Shoes</a></li>
                 <li><a href="/single-product-page.html" class="hover:text-primary">Accessories</a></li>
             </ul>
-            </div>
+            </div> --}}
             <!-- Menu 2 -->
-            <div class="w-full sm:w-1/6 px-4 mb-8">
+            {{-- <div class="w-full sm:w-1/6 px-4 mb-8">
             <h3 class="text-lg font-semibold mb-4">Pages</h3>
             <ul>
                 <li><a href="/shop.html" class="hover:text-primary">Shop</a></li>
@@ -671,14 +683,14 @@
                 <li><a href="/checkout.html" class="hover:text-primary">Checkout</a></li>
                 <li><a href="/404.html" class="hover:text-primary">404</a></li>
             </ul>
-            </div>
+            </div> --}}
             <!-- Menu 3 -->
             <div class="w-full sm:w-1/6 px-4 mb-8">
             <h3 class="text-lg font-semibold mb-4">Account</h3>
             <ul>
-                <li><a href="/cart.html" class="hover:text-primary">Cart</a></li>
-                <li><a href="/register.html" class="hover:text-primary">Registration</a></li>
-                <li><a href="/register.html" class="hover:text-primary">Login</a></li>
+                {{-- <li><a href="/cart.html" class="hover:text-primary">Cart</a></li> --}}
+                <li><a href="{{ route('register') }}" class="hover:text-primary">Registration</a></li>
+                <li><a href="{{ route('login') }}" class="hover:text-primary">Login</a></li>
             </ul>
             </div>
             <!-- Social Media -->
@@ -689,7 +701,7 @@
                 <img src="/images/social_icons/facebook.svg" alt="Facebook" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                 <a href="#" class="hover:text-primary">Facebook</a>
                 </li>
-                <li class="flex items-center mb-2">
+                {{-- <li class="flex items-center mb-2">
                 <img src="/images/social_icons/twitter.svg" alt="Twitter" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                 <a href="#" class="hover:text-primary">Twitter</a>
                 </li>
@@ -700,7 +712,7 @@
                 <li class="flex items-center mb-2">
                 <img src="/images/social_icons/pinterest.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                 <a href="#" class="hover:text-primary">Pinterest</a>
-                </li>
+                </li> --}}
                 <li class="flex items-center mb-2">
                 <img src="/images/social_icons/youtube.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                 <a href="#" class="hover:text-primary">YouTube</a>
@@ -711,9 +723,9 @@
             <div class="w-full sm:w-2/6 px-4 mb-8">
             <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
             <p><img src="/images/template-logo.png" alt="Logo" class="h-[60px] mb-4"></p>
-            <p>123 Street Name, Paris, France</p>
-            <p class="text-xl font-bold my-4">Phone: (123) 456-7890</p>
-            <a href="mailto:info@company.com" class="underline">Email: info@company.com</a>
+            <p>Portugal, Madeira</p>
+            <p class="text-xl font-bold my-4">Phone: </p>
+            <a href="mailto:info@company.com" class="underline">Email: nasgaming92@gmail.com</a>
             </div>
         </div>
         </div>
@@ -723,20 +735,20 @@
         <div class="container mx-auto px-4 flex flex-wrap justify-between items-center">
             <!-- Copyright and Links -->
             <div class="w-full lg:w-3/4 text-center lg:text-left mb-4 lg:mb-0">
-            <p class="mb-2 font-bold">&copy; 2024 Your Company. All rights reserved.</p>
+            <p class="mb-2 font-bold">&copy; 2025 Whatcanyoudo3D Company. All rights reserved.</p>
             <ul class="flex justify-center lg:justify-start space-x-4 mb-4 lg:mb-0">
                 <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
                 <li><a href="#" class="hover:text-primary">Terms of Service</a></li>
                 <li><a href="#" class="hover:text-primary">FAQ</a></li>
             </ul>
-            <p class="text-sm mt-4">Your shop's description goes here. This is a brief introduction to your shop and what you offer.</p>
+            <p class="text-sm mt-4">In this website u can find your favorite 3D prints.</p>
             </div>
             <!-- Payment Icons -->
-            <div class="w-full lg:w-1/4 text-center lg:text-right">
+            {{-- <div class="w-full lg:w-1/4 text-center lg:text-right">
             <img src="/assets/images/social_icons/paypal.svg" alt="PayPal" class="inline-block h-8 mr-2">
             <img src="/assets/images/social_icons/stripe.svg" alt="Stripe" class="inline-block h-8 mr-2">
             <img src="/assets/images/social_icons/visa.svg" alt="Visa" class="inline-block h-8">
-            </div>
+            </div> --}}
         </div>
         </div>
     </footer>
