@@ -19,7 +19,7 @@ Route::get('/items/list', function()    {
     $users = Auth::user()->role === 'admin'
     ? User::with('item')->has('item')
     : User::with('item')->Where('id', Auth::id())->whereHas('item');
-    return view('items.list', ['users'=> $users->paginate(1)]);
+    return view('items.list', ['users'=> $users->paginate(15)]);
 
 })->middleware(['auth', 'verified'])->name('items.list');
 
@@ -28,7 +28,8 @@ Route::resource('/items', ItemController::class)->only(['store', 'update'])->mid
 Route::resource('/items', ItemController::class)
 ->only(['create', 'edit', 'destroy'])
 ->middleware(['auth', 'verified']);
-Route::resource('/items', ItemController::class)->except(['store', 'update', 'create', 'edit', 'destroy']);
+Route::resource('/items', ItemController::class)
+    ->only(['index', 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

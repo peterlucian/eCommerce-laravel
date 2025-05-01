@@ -26,7 +26,7 @@ class ItemController extends Controller
             default => Item::query(),
         };
 
-        return view('items.index', ['items'=> $items->paginate(1)]);
+        return view('items.index', ['items'=> $items->paginate(15)]);
     }
 
 
