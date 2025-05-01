@@ -6,7 +6,7 @@
     <header class="bg-sky-500/50 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center py-4">
             <!-- Left section: Logo -->
-            <a href="index.html" class="flex items-center">
+            <a href="{{ route('items.index') }}" class="flex items-center">
               <div>
                   <img src="/images/template-white-logo.png" alt="Logo" class="h-14 w-auto mr-4">
               </div>
@@ -73,12 +73,12 @@
                           <li><a href="shop.html" class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Women Item 2</a></li>
                           <li><a href="shop.html" class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Women Item 3</a></li>
                       </ul>
-                  </li>
+                  </li> --}}
 
-                  <li><a href="shop.html" class="hover:text-secondary font-semibold">Shop</a></li>
-                  <li><a href="single-product-page.html" class="hover:text-secondary font-semibold">Product</a></li>
-                  <li><a href="404.html" class="hover:text-secondary font-semibold">404 page</a></li>
-                  <li><a href="checkout.html" class="hover:text-secondary font-semibold">Checkout</a></li> --}}
+                  <li><a href="{{route('items.index')}}" class="hover:text-secondary font-semibold">Shop</a></li>
+                  <li><a href="" class="hover:text-secondary font-semibold">Product</a></li>
+                  <li><a href="" class="hover:text-secondary font-semibold">404 page</a></li>
+                  {{-- <li><a href="checkout.html" class="hover:text-secondary font-semibold">Checkout</a></li>  --}}
               </ul>
             </nav>
 
@@ -167,10 +167,10 @@
                 </ul>
             </li> --}}
 
-            {{-- <li><a href="shop.html" class="hover:text-secondary font-bold block py-2">Shop</a></li>
-            <li><a href="single-product-page.html" class="hover:text-secondary font-bold block py-2">Product</a></li>
-            <li><a href="404.html" class="hover:text-secondary font-bold block py-2">404 page</a></li>
-            <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">Checkout</a></li> --}}
+            <li><a href="{{route('items.index')}}" class="hover:text-secondary font-bold block py-2">Shop</a></li>
+            <li><a href="" class="hover:text-secondary font-bold block py-2">Product</a></li>
+            <li><a href="" class="hover:text-secondary font-bold block py-2">404 page</a></li>
+            {{-- <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">Checkout</a></li> --}}
         </ul>
         <div class="flex flex-col mt-6 space-y-2 items-center">
             {{-- <a href="register.html"
@@ -195,8 +195,8 @@
                         </a>
                     @endif
             @endauth
-            <a href="register.html"
-                class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Cart -&nbsp;<span>5</span>&nbsp;items</a>
+            {{-- <a href="register.html"
+                class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]">Cart -&nbsp;<span>5</span>&nbsp;items</a> --}}
 
             </div>
         <!-- Search field -->
@@ -224,7 +224,7 @@
                         <img src="/images/main-slider/doraemon.jpg" alt="Product 1">
                         <div class="swiper-slide-content">
                         <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Doraemon</h2>
-                        <p class="mb-4 text-white md:text-2xl">Experience the best in sportswear with <br>our latest collection.</p>
+                        <p class="mb-4 text-white md:text-2xl">Experience the best in 3d print with <br>our latest products.</p>
                             {{-- <a href="/"
                                 class="bg-primary hover:bg-transparent text-white hover:text-white border border-transparent hover:border-white font-semibold px-4 py-2 rounded-full inline-block">Shop
                                 now</a> --}}
@@ -235,7 +235,7 @@
                         <img src="/images/main-slider/anime.jpg" alt="Product 2">
                         <div class="swiper-slide-content">
                         <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Animel</h2>
-                        <p class="mb-4 text-white md:text-2xl">Discover the latest trends in Men`s <br>sportswear and casual fashion.</p>
+                        <p class="mb-4 text-white md:text-2xl">Discover the latest 3d print trends <br> with our users.</p>
                             {{-- <a href="/"
                                 class="bg-white hover:bg-transparent text-black hover:text-white font-semibold px-4 py-2 rounded-full inline-block border border-transparent hover:border-white">Shop
                                 now</a> --}}
@@ -246,7 +246,7 @@
                         <img src="/images/main-slider/dragonball.jpeg" alt="Product 3">
                         <div class="swiper-slide-content">
                         <h2 class="text-3xl md:text-7xl font-bold text-white mb-2 md:mb-4">Dragon Ball</h2>
-                        <p class="mb-4 text-white md:text-2xl">Elevate your style with our latest <br>sportswear collection.</p>
+                        <p class="mb-4 text-white md:text-2xl">Elevate your 3d prints style with our latest <br> 3d prints.</p>
                             {{-- <a href="/"
                                 class="bg-primary hover:bg-transparent text-white hover:text-white border border-transparent hover:border-white font-semibold px-4 py-2 rounded-full inline-block">Shop
                                 now</a> --}}
@@ -430,15 +430,15 @@
         <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
             <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
                 <div class="flex flex-col p-6 bg-white rounded-xl shadow-lg">
-                    <img class="object-cover object-center w-full mb-8 rounded-xl" src="/assets/images/fashion-trends.jpg" alt="blog">
-                    <h2 class="mb-2 text-xs font-semibold tracking-widest text-primary uppercase">Fashion Trends</h2>
-                    <h1 class="mb-4 text-2xl font-semibold leading-none tracking-tighter text-gray-dark lg:text-3xl">Latest Shirt Trends for 2024</h1>
-                    <p class="flex-grow text-base font-medium leading-relaxed text-gray-txt">Explore the hottest shirt trends of 2024. From bold prints to classic styles, stay ahead of the fashion curve with our expert insights.</p>
-                    <div class="mt-8">
+                    <img class="object-cover object-center w-full mb-8 rounded-xl" src="/images/3dprinter.jpg" alt="blog">
+                    <h2 class="mb-2 text-xs font-semibold tracking-widest text-primary uppercase">3D Print Trends</h2>
+                    <h1 class="mb-4 text-2xl font-semibold leading-none tracking-tighter text-gray-dark lg:text-3xl">Latest 3D Print Trends for 2025</h1>
+                    <p class="flex-grow text-base font-medium leading-relaxed text-gray-txt">Explore the hottest 3D Prints trends of 2025. From bold prints to classic styles, stay ahead of the 3D Print curve with our expert insights.</p>
+                    {{-- <div class="mt-8">
                         <a href="#" class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Read more</a>
-                    </div>
+                    </div> --}}
                 </div>
-                <div class="flex flex-col p-6 bg-white rounded-xl shadow-lg">
+                {{-- <div class="flex flex-col p-6 bg-white rounded-xl shadow-lg">
                     <img class="object-cover object-center w-full mb-8 rounded-xl" src="/assets/images/stylisng-tips.jpg" alt="blog">
                     <h2 class="mb-2 text-xs font-semibold tracking-widest text-primary uppercase">Styling Tips</h2>
                     <h1 class="mb-4 text-2xl font-semibold leading-none tracking-tighter text-gray-dark lg:text-3xl">How to Style Your Shirt for Any Occasion</h1>
@@ -455,13 +455,13 @@
                     <div class="mt-8">
                         <a href="#" class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Read more</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         </section>
 
         <!-- Subscribe section -->
-        <section id="subscribe" class="py-6 lg:py-24 bg-white border-t border-gray-line">
+        {{-- <section id="subscribe" class="py-6 lg:py-24 bg-white border-t border-gray-line">
         <div class="container mx-auto">
             <div class="flex flex-col items-center rounded-lg p-4 sm:p-0 ">
                 <div class="mb-8">
@@ -478,7 +478,7 @@
                 </div>
             </div>
         </div>
-        </section>
+        </section> --}}
 
         <!-- Footer -->
         <footer class="border-t border-gray-line">
@@ -486,7 +486,7 @@
             <div class="container mx-auto px-4 py-10">
             <div class="flex flex-wrap -mx-4">
                 <!-- Menu 1 -->
-                <div class="w-full sm:w-1/6 px-4 mb-8">
+                {{-- <div class="w-full sm:w-1/6 px-4 mb-8">
                 <h3 class="text-lg font-semibold mb-4">Shop</h3>
                 <ul>
                     <li><a href="/shop.html" class="hover:text-primary">Shop</a></li>
@@ -495,7 +495,7 @@
                     <li><a href="/single-product-page.html" class="hover:text-primary">Shoes</a></li>
                     <li><a href="/single-product-page.html" class="hover:text-primary">Accessories</a></li>
                 </ul>
-                </div>
+                </div> --}}
                 <!-- Menu 2 -->
                 <div class="w-full sm:w-1/6 px-4 mb-8">
                 <h3 class="text-lg font-semibold mb-4">Pages</h3>
@@ -510,9 +510,9 @@
                 <div class="w-full sm:w-1/6 px-4 mb-8">
                 <h3 class="text-lg font-semibold mb-4">Account</h3>
                 <ul>
-                    <li><a href="/cart.html" class="hover:text-primary">Cart</a></li>
-                    <li><a href="/register.html" class="hover:text-primary">Registration</a></li>
-                    <li><a href="/register.html" class="hover:text-primary">Login</a></li>
+                    {{-- <li><a href="/cart.html" class="hover:text-primary">Cart</a></li> --}}
+                    <li><a href="{{ route('register') }}" class="hover:text-primary">Registration</a></li>
+                    <li><a href="{{ route('login') }}" class="hover:text-primary">Login</a></li>
                 </ul>
                 </div>
                 <!-- Social Media -->
@@ -523,7 +523,7 @@
                     <img src="/images/social_icons/facebook.svg" alt="Facebook" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                     <a href="#" class="hover:text-primary">Facebook</a>
                     </li>
-                    <li class="flex items-center mb-2">
+                    {{-- <li class="flex items-center mb-2">
                     <img src="/images/social_icons/twitter.svg" alt="Twitter" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                     <a href="#" class="hover:text-primary">Twitter</a>
                     </li>
@@ -534,7 +534,7 @@
                     <li class="flex items-center mb-2">
                     <img src="/images/social_icons/pinterest.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                     <a href="#" class="hover:text-primary">Pinterest</a>
-                    </li>
+                    </li> --}}
                     <li class="flex items-center mb-2">
                     <img src="/images/social_icons/youtube.svg" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                     <a href="#" class="hover:text-primary">YouTube</a>
@@ -544,10 +544,10 @@
                 <!-- Contact Information -->
                 <div class="w-full sm:w-2/6 px-4 mb-8">
                 <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
-                <p><img src="/images/template-logo.png" alt="Logo" class="h-[60px] mb-4"></p>
-                <p>123 Street Name, Paris, France</p>
-                <p class="text-xl font-bold my-4">Phone: (123) 456-7890</p>
-                <a href="mailto:info@company.com" class="underline">Email: info@company.com</a>
+                <p><img src="/images/template-white-logo.png" alt="Logo" class="h-[60px] mb-4"></p>
+                <p>Portugal, Madeira</p>
+                <p class="text-xl font-bold my-4">Phone: </p>
+                <a href="mailto:info@company.com" class="underline">Email: nasgaming92@gmail.com</a>
                 </div>
             </div>
             </div>
@@ -557,20 +557,20 @@
             <div class="container mx-auto px-4 flex flex-wrap justify-between items-center">
                 <!-- Copyright and Links -->
                 <div class="w-full lg:w-3/4 text-center lg:text-left mb-4 lg:mb-0">
-                <p class="mb-2 font-bold">&copy; 2024 Your Company. All rights reserved.</p>
+                <p class="mb-2 font-bold">&copy; 2025 Whatcanyoudo3D Company. All rights reserved.</p>
                 <ul class="flex justify-center lg:justify-start space-x-4 mb-4 lg:mb-0">
                     <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
                     <li><a href="#" class="hover:text-primary">Terms of Service</a></li>
                     <li><a href="#" class="hover:text-primary">FAQ</a></li>
                 </ul>
-                <p class="text-sm mt-4">Your shop's description goes here. This is a brief introduction to your shop and what you offer.</p>
+                <p class="text-sm mt-4">In this website u can find your favorite 3D prints.</p>
                 </div>
                 <!-- Payment Icons -->
-                <div class="w-full lg:w-1/4 text-center lg:text-right">
+                {{-- <div class="w-full lg:w-1/4 text-center lg:text-right">
                 <img src="/assets/images/social_icons/paypal.svg" alt="PayPal" class="inline-block h-8 mr-2">
                 <img src="/assets/images/social_icons/stripe.svg" alt="Stripe" class="inline-block h-8 mr-2">
                 <img src="/assets/images/social_icons/visa.svg" alt="Visa" class="inline-block h-8">
-                </div>
+                </div> --}}
             </div>
             </div>
         </footer>

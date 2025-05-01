@@ -21,9 +21,14 @@ Route::get('/items/list', function()    {
     : User::with('item')->Where('id', Auth::id())->whereHas('item');
     return view('items.list', ['users'=> $users->paginate(1)]);
 
-})->name('items.list');
+})->middleware(['auth', 'verified'])->name('items.list');
 
-Route::resource('/items', ItemController::class);
+Route::resource('/items', ItemController::class)->only(['store', 'update'])->middleware(['auth', 'verified', 'throttle:5,1']);
+// Routes that require auth but no throttle (create + edit)
+Route::resource('/items', ItemController::class)
+->only(['create', 'edit', 'destroy'])
+->middleware(['auth', 'verified']);
+Route::resource('/items', ItemController::class)->except(['store', 'update', 'create', 'edit', 'destroy']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

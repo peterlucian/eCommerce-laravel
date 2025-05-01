@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="icon" type="icon" href="assets/images/favicon.png" />
+    {{-- <link rel="icon" type="icon" href="assets/images/favicon.png" /> --}}
     <title>Home page</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
