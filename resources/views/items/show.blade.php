@@ -722,7 +722,7 @@
             <!-- Contact Information -->
             <div class="w-full sm:w-2/6 px-4 mb-8">
             <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
-            <p><img src="/images/template-logo.png" alt="Logo" class="h-[60px] mb-4"></p>
+            <p><img src="/images/template-white-logo.png" alt="Logo" class="h-[60px] mb-4"></p>
             <p>Portugal, Madeira</p>
             <p class="text-xl font-bold my-4">Phone: </p>
             <a href="mailto:info@company.com" class="underline">Email: nasgaming92@gmail.com</a>
